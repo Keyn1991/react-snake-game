@@ -26,7 +26,7 @@ const App: React.FC = () => {
 
     const generateNewTarget = useCallback(() => {
         const x = Math.floor(Math.random() * 19);
-        const y = Math.floor(Math.random() * 19);
+        const y = Math.floor(Math.random() * 20);
 
         setTarget({ x, y });
     }, []);
@@ -52,7 +52,7 @@ const App: React.FC = () => {
                 break;
         }
 
-        if (head.x < 0 || head.x >= 19 || head.y < 0 || head.y >= 19) {
+        if (head.x < 0 || head.x >= 19 || head.y < 0 || head.y >= 20) {
             handleGameOver();
             return;
         }
