@@ -12,9 +12,10 @@ const App: React.FC = () => {
     const [target, setTarget] = useState({ x: 5, y: 5 });
     const [isGameOver, setIsGameOver] = useState(false);
 
-    const handleGameOver = () => {
+    const handleGameOver = useCallback(() => {
         setIsGameOver(true);
-    }
+    }, []);
+
 
     const handleRestartGame = () => {
         setIsGameOver(false);
@@ -23,11 +24,12 @@ const App: React.FC = () => {
         generateNewTarget();
     };
 
-    const generateNewTarget = () => {
+    const generateNewTarget = useCallback(() => {
         const x = Math.floor(Math.random() * 19);
         const y = Math.floor(Math.random() * 19);
+
         setTarget({ x, y });
-    };
+    }, []);
 
     const moveSnake = useCallback(() => {
         const newSegments = [...snakeSegments];
