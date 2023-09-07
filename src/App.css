@@ -7,7 +7,7 @@
 
 .GameArea {
   position: relative;
-  width: 400px;
+  width: 380px;
   height: 400px;
   border: 2px solid black;
 }
@@ -32,9 +32,8 @@
 .Modal button {
   margin-top: 10px;
 }
-@media (max-width: 768px) {
-
+@media (max-width: 767px) {
   .GameArea {
-
+    width: 380px;
   }
 }
